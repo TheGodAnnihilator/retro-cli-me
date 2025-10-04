@@ -249,6 +249,7 @@ const contactCommand = (): CommandResult => ({
     { type: 'success', content: 'Social Media:' },
     { type: 'link', content: 'LinkedIn: linkedin.com/in/archit-rohatgi', href: 'https://linkedin.com/in/archit-rohatgi' },
     { type: 'link', content: 'GitHub: github.com/archit-rohatgi', href: 'https://github.com/archit-rohatgi' },
+    { type: 'link', content: 'Instagram: instagram.com/arcrohatgi', href: 'https://www.instagram.com/arcrohatgi/' },
     { type: 'output', content: '' },
   ],
 });
