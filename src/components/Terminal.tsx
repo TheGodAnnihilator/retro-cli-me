@@ -10,7 +10,7 @@ export const Terminal = () => {
   const [output, setOutput] = useState<TerminalLine[]>([
     {
       type: 'system',
-      content: 'Welcome to Mark Gatere\'s Portfolio Terminal v1.0.0',
+      content: 'Welcome to Archit Rohatgi\'s Portfolio Terminal v1.0.0',
     },
     {
       type: 'system',
@@ -70,7 +70,7 @@ export const Terminal = () => {
       ...output,
       {
         type: 'command',
-        content: `mark@portfolio:~$ ${command}`,
+        content: `archit@portfolio:~$ ${command}`,
       },
     ];
 
@@ -167,7 +167,7 @@ export const Terminal = () => {
               <div className="w-3 h-3 rounded-full bg-terminal-success"></div>
             </div>
             <div className="flex-1 text-center text-sm text-terminal-comment">
-              mark@portfolio: ~
+              archit@portfolio: ~
             </div>
           </div>
 
@@ -180,7 +180,7 @@ export const Terminal = () => {
 
             {/* Input line */}
             <form onSubmit={handleSubmit} className="flex items-center mt-2">
-              <span className="text-terminal-prompt terminal-glow mr-2">mark@portfolio:~$</span>
+              <span className="text-terminal-prompt terminal-glow mr-2">archit@portfolio:~$</span>
               <input
                 ref={inputRef}
                 type="text"

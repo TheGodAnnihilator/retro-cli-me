@@ -143,7 +143,7 @@
   
   /* CRT glow effect */
   .terminal-glow {
-    text-shadow: 0 0 10px hsl(var(--terminal-glow) / 0.5);
+    text-shadow: 0 0 3px hsl(var(--terminal-glow) / 0.2);
   }
   
   /* Terminal typing animation */
