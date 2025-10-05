@@ -181,17 +181,19 @@ export const Terminal = () => {
             {/* Input line */}
             <form onSubmit={handleSubmit} className="flex items-center mt-2">
               <span className="text-terminal-prompt terminal-glow mr-2">archit@portfolio:~$</span>
-              <input
-                ref={inputRef}
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className="flex-1 bg-transparent outline-none text-terminal-text caret-terminal-text terminal-glow"
-                autoFocus
-                spellCheck={false}
-              />
-              <span className="terminal-cursor text-terminal-text">█</span>
+              <div className="flex-1 relative">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full bg-transparent outline-none text-terminal-text terminal-glow caret-transparent"
+                  autoFocus
+                  spellCheck={false}
+                />
+                <span className="terminal-cursor text-terminal-text absolute top-0 pointer-events-none" style={{ left: `${input.length * 0.6}em` }}>█</span>
+              </div>
             </form>
           </div>
         </div>
