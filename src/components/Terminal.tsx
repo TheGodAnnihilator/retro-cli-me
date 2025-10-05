@@ -10,7 +10,35 @@ export const Terminal = () => {
   const [output, setOutput] = useState<TerminalLine[]>([
     {
       type: 'system',
-      content: 'Welcome to Archit Rohatgi\'s Portfolio Terminal v1.0.0',
+      content: '  █████╗ ██████╗  ██████╗██╗  ██╗██╗████████╗    ██████╗  ██████╗ ██╗  ██╗ █████╗ ████████╗ ██████╗ ██╗',
+    },
+    {
+      type: 'system',
+      content: ' ██╔══██╗██╔══██╗██╔════╝██║  ██║██║╚══██╔══╝    ██╔══██╗██╔═══██╗██║  ██║██╔══██╗╚══██╔══╝██╔════╝ ██║',
+    },
+    {
+      type: 'system',
+      content: ' ███████║██████╔╝██║     ███████║██║   ██║       ██████╔╝██║   ██║███████║███████║   ██║   ██║  ███╗██║',
+    },
+    {
+      type: 'system',
+      content: ' ██╔══██║██╔══██╗██║     ██╔══██║██║   ██║       ██╔══██╗██║   ██║██╔══██║██╔══██║   ██║   ██║   ██║██║',
+    },
+    {
+      type: 'system',
+      content: ' ██║  ██║██║  ██║╚██████╗██║  ██║██║   ██║       ██║  ██║╚██████╔╝██║  ██║██║  ██║   ██║   ╚██████╔╝██║',
+    },
+    {
+      type: 'system',
+      content: ' ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝',
+    },
+    {
+      type: 'system',
+      content: '',
+    },
+    {
+      type: 'system',
+      content: "Welcome to Archit Rohatgi's Portfolio Terminal v1.0.0",
     },
     {
       type: 'system',

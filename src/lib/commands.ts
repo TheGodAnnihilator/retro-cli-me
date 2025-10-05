@@ -14,6 +14,7 @@ const commands = {
   
   clear: () => clearCommand(),
   cls: () => clearCommand(),
+  home: () => homeCommand(),
   
   history: () => historyCommand(),
   
@@ -96,7 +97,7 @@ const helpCommand = (): CommandResult => ({
     { type: 'output', content: 'Available commands:' },
     { type: 'output', content: '' },
     { type: 'list', content: 'help, ?, commands     - Show this help message' },
-    { type: 'list', content: 'about                 - Learn about Mark Gatere' },
+    { type: 'list', content: 'about                 - Learn about Archit Rohatgi' },
     { type: 'list', content: 'skills                - View technical skills' },
     { type: 'list', content: 'projects              - Browse portfolio projects' },
     { type: 'list', content: 'experience            - View work history' },
@@ -105,6 +106,7 @@ const helpCommand = (): CommandResult => ({
     { type: 'list', content: 'themes                - View available color themes' },
     { type: 'list', content: 'theme <name>          - Change color theme' },
     { type: 'list', content: 'clear, cls            - Clear terminal screen' },
+    { type: 'list', content: 'home                  - Return to welcome screen' },
     { type: 'list', content: 'history               - Show command history' },
     { type: 'output', content: '' },
     { type: 'comment', content: 'Navigation:' },
@@ -286,6 +288,22 @@ const themesCommand = (): CommandResult => ({
 
 const clearCommand = (): CommandResult => ({
   output: [],
+  clear: true,
+});
+
+const homeCommand = (): CommandResult => ({
+  output: [
+    { type: 'system', content: '  █████╗ ██████╗  ██████╗██╗  ██╗██╗████████╗    ██████╗  ██████╗ ██╗  ██╗ █████╗ ████████╗ ██████╗ ██╗' },
+    { type: 'system', content: ' ██╔══██╗██╔══██╗██╔════╝██║  ██║██║╚══██╔══╝    ██╔══██╗██╔═══██╗██║  ██║██╔══██╗╚══██╔══╝██╔════╝ ██║' },
+    { type: 'system', content: ' ███████║██████╔╝██║     ███████║██║   ██║       ██████╔╝██║   ██║███████║███████║   ██║   ██║  ███╗██║' },
+    { type: 'system', content: ' ██╔══██║██╔══██╗██║     ██╔══██║██║   ██║       ██╔══██╗██║   ██║██╔══██║██╔══██║   ██║   ██║   ██║██║' },
+    { type: 'system', content: ' ██║  ██║██║  ██║╚██████╗██║  ██║██║   ██║       ██║  ██║╚██████╔╝██║  ██║██║  ██║   ██║   ╚██████╔╝██║' },
+    { type: 'system', content: ' ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝       ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝' },
+    { type: 'system', content: '' },
+    { type: 'system', content: "Welcome to Archit Rohatgi's Portfolio Terminal v1.0.0" },
+    { type: 'system', content: 'Type "help" to see available commands.' },
+    { type: 'output', content: '' },
+  ],
   clear: true,
 });
 
