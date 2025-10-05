@@ -182,19 +182,19 @@ export const Terminal = () => {
   return (
     <div 
       ref={terminalRef}
-      className="min-h-screen bg-terminal-bg text-terminal-text p-4 md:p-8 relative scan-lines"
+      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 relative scan-lines"
     >
       <div className="max-w-6xl mx-auto">
         {/* Terminal window */}
         <div className="border border-terminal-border rounded-lg overflow-hidden shadow-2xl">
           {/* Terminal header */}
-          <div className="bg-terminal-bg border-b border-terminal-border px-4 py-2 flex items-center gap-2">
-            <div className="flex gap-2">
-              <div className="w-3 h-3 rounded-full bg-destructive"></div>
-              <div className="w-3 h-3 rounded-full bg-terminal-warning"></div>
-              <div className="w-3 h-3 rounded-full bg-terminal-success"></div>
+          <div className="bg-terminal-bg border-b border-terminal-border px-2 sm:px-4 py-2 flex items-center gap-2">
+            <div className="flex gap-1 sm:gap-2">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-destructive"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-warning"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-success"></div>
             </div>
-            <div className="flex-1 text-center text-sm text-terminal-comment">
+            <div className="flex-1 text-center text-xs sm:text-sm text-terminal-comment">
               archit@portfolio: ~
             </div>
           </div>
@@ -202,36 +202,39 @@ export const Terminal = () => {
           {/* Terminal output */}
           <div 
             ref={outputRef}
-            className="bg-terminal-bg p-4 min-h-[500px] max-h-[600px] overflow-y-auto font-mono text-sm md:text-base"
+            className="bg-terminal-bg p-2 sm:p-4 min-h-[400px] sm:min-h-[500px] max-h-[70vh] sm:max-h-[600px] overflow-y-auto overflow-x-auto font-mono text-xs sm:text-sm md:text-base"
           >
             <TerminalOutput lines={output} />
 
             {/* Input line */}
             <form onSubmit={handleSubmit} className="flex items-center mt-2">
-              <span className="text-terminal-prompt terminal-glow mr-2">archit@portfolio:~$</span>
-              <div className="flex-1 relative">
+              <span className="text-terminal-prompt terminal-glow mr-1 sm:mr-2 text-xs sm:text-sm md:text-base whitespace-nowrap">archit@portfolio:~$</span>
+              <div className="flex-1 relative min-w-0">
                 <input
                   ref={inputRef}
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyDown}
-                  className="w-full bg-transparent outline-none text-terminal-text terminal-glow caret-transparent"
+                  className="w-full bg-transparent outline-none text-terminal-text terminal-glow caret-transparent text-xs sm:text-sm md:text-base"
                   autoFocus
                   spellCheck={false}
+                  autoComplete="off"
+                  autoCapitalize="off"
+                  autoCorrect="off"
                 />
-                <span className="terminal-cursor text-terminal-text absolute top-0 pointer-events-none" style={{ left: `${input.length * 0.6}em` }}>█</span>
+                <span className="terminal-cursor text-terminal-text absolute top-0 pointer-events-none text-xs sm:text-sm md:text-base" style={{ left: `${input.length * 0.6}em` }}>█</span>
               </div>
             </form>
           </div>
         </div>
 
         {/* Keyboard shortcuts hint */}
-        <div className="mt-4 text-xs text-terminal-comment text-center space-x-4">
-          <span>Tab: autocomplete</span>
-          <span>↑↓: history</span>
-          <span>Ctrl+L: clear</span>
-          <span>Ctrl+C: cancel</span>
+        <div className="mt-2 sm:mt-4 text-[10px] sm:text-xs text-terminal-comment text-center space-x-2 sm:space-x-4 px-2">
+          <span className="inline-block">Tab: autocomplete</span>
+          <span className="inline-block">↑↓: history</span>
+          <span className="hidden sm:inline-block">Ctrl+L: clear</span>
+          <span className="hidden sm:inline-block">Ctrl+C: cancel</span>
         </div>
       </div>
     </div>
