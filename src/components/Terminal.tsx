@@ -10,46 +10,6 @@ export const Terminal = () => {
   const [output, setOutput] = useState<TerminalLine[]>([
     {
       type: 'system',
-      content: '                                                                           ',
-    },
-    {
-      type: 'system',
-      content: '    ___            _    _ _     ____       _           _        _ ',
-    },
-    {
-      type: 'system',
-      content: '   / _ \\          | |  (_) |   |  _ \\     | |         | |      (_)',
-    },
-    {
-      type: 'system',
-      content: '  / /_\\ \\_ __ ___| |__ _| |_  | |_) | ___| |__   __ _| |_ __ _ _ ',
-    },
-    {
-      type: 'system',
-      content: '  |  _  | \'__/ __| \'_ \\| | __| |  _ < / _ \\ \'_ \\ / _` | __/ _` | |',
-    },
-    {
-      type: 'system',
-      content: '  | | | | | | (__| | | | | |_  | |_) |  __/ | | | (_| | || (_| | |',
-    },
-    {
-      type: 'system',
-      content: '  \\_| |_/_|  \\___|_| |_|_|\\__| |____/ \\___|_| |_|\\__,_|\\__\\__, |_|',
-    },
-    {
-      type: 'system',
-      content: '                                                           __/ |  ',
-    },
-    {
-      type: 'system',
-      content: '                                                          |___/   ',
-    },
-    {
-      type: 'system',
-      content: '',
-    },
-    {
-      type: 'system',
       content: "Welcome to Archit Rohatgi's Portfolio Terminal v1.0.0",
     },
     {
@@ -194,7 +154,7 @@ export const Terminal = () => {
   return (
     <div 
       ref={terminalRef}
-      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 relative scan-lines"
+      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-16 relative scan-lines"
     >
       <div className="max-w-6xl mx-auto">
         {/* Terminal window */}

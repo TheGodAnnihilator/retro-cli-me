@@ -1,0 +1,35 @@
+import { Terminal as TerminalIcon, User, Briefcase, FolderOpen, Mail } from 'lucide-react';
+
+export const Taskbar = () => {
+  return (
+    <div className="fixed top-0 left-0 right-0 z-50 bg-terminal-bg/95 backdrop-blur-sm border-b border-terminal-border">
+      <div className="max-w-7xl mx-auto px-4 h-12 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <TerminalIcon className="w-5 h-5 text-terminal-success" />
+          <span className="font-mono text-sm text-terminal-text font-semibold">
+            Archit Rohatgi
+          </span>
+        </div>
+        
+        <div className="flex items-center gap-4">
+          <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors">
+            <User className="w-4 h-4" />
+            <span className="hidden sm:inline">About</span>
+          </button>
+          <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors">
+            <Briefcase className="w-4 h-4" />
+            <span className="hidden sm:inline">Experience</span>
+          </button>
+          <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors">
+            <FolderOpen className="w-4 h-4" />
+            <span className="hidden sm:inline">Projects</span>
+          </button>
+          <button className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors">
+            <Mail className="w-4 h-4" />
+            <span className="hidden sm:inline">Contact</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

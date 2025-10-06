@@ -1,4 +1,5 @@
 import { Terminal } from '@/components/Terminal';
+import { Taskbar } from '@/components/Taskbar';
 import { Helmet } from 'react-helmet';
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </Helmet>
+      <Taskbar />
       <Terminal />
     </>
   );

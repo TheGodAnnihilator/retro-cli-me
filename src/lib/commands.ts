@@ -293,16 +293,6 @@ const clearCommand = (): CommandResult => ({
 
 const homeCommand = (): CommandResult => ({
   output: [
-    { type: 'system', content: '                                                                           ' },
-    { type: 'system', content: '    ___            _    _ _     ____       _           _        _ ' },
-    { type: 'system', content: '   / _ \\          | |  (_) |   |  _ \\     | |         | |      (_)' },
-    { type: 'system', content: '  / /_\\ \\_ __ ___| |__ _| |_  | |_) | ___| |__   __ _| |_ __ _ _ ' },
-    { type: 'system', content: '  |  _  | \'__/ __| \'_ \\| | __| |  _ < / _ \\ \'_ \\ / _` | __/ _` | |' },
-    { type: 'system', content: '  | | | | | | (__| | | | | |_  | |_) |  __/ | | | (_| | || (_| | |' },
-    { type: 'system', content: '  \\_| |_/_|  \\___|_| |_|_|\\__| |____/ \\___|_| |_|\\__,_|\\__\\__, |_|' },
-    { type: 'system', content: '                                                           __/ |  ' },
-    { type: 'system', content: '                                                          |___/   ' },
-    { type: 'system', content: '' },
     { type: 'system', content: "Welcome to Archit Rohatgi's Portfolio Terminal v1.0.0" },
     { type: 'system', content: 'Type "help" to see available commands.' },
     { type: 'output', content: '' },
