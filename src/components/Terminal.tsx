@@ -3,7 +3,11 @@ import { TerminalOutput } from './TerminalOutput';
 import { executeCommand, getAutocomplete } from '@/lib/commands';
 import { TerminalLine } from '@/types/terminal';
 
-export const Terminal = () => {
+interface TerminalProps {
+  onCommandExecute?: (command: string) => void;
+}
+
+export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
   const [input, setInput] = useState('');
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
@@ -58,12 +62,8 @@ export const Terminal = () => {
     return () => terminalRef.current?.removeEventListener('click', handleClick);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!input.trim()) return;
-
-    const command = input.trim();
+  const executeTerminalCommand = (command: string) => {
+    if (!command.trim()) return;
     
     // Add command to output
     const newOutput: TerminalLine[] = [
@@ -102,6 +102,22 @@ export const Terminal = () => {
     // Clear input
     setInput('');
   };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const command = input.trim();
+    executeTerminalCommand(command);
+  };
+
+  // Expose executeTerminalCommand to parent
+  useEffect(() => {
+    if (onCommandExecute) {
+      (window as any).__executeTerminalCommand = executeTerminalCommand;
+    }
+    return () => {
+      delete (window as any).__executeTerminalCommand;
+    };
+  }, [onCommandExecute, output, history, theme]);
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     // Arrow up - previous command
