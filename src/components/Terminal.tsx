@@ -170,7 +170,7 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
   return (
     <div 
       ref={terminalRef}
-      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-16 relative scan-lines"
+      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-20 relative scan-lines"
     >
       <div className="max-w-6xl mx-auto">
         {/* Terminal window */}
