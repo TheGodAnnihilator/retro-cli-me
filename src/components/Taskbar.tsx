@@ -1,4 +1,4 @@
-import { Terminal as TerminalIcon, User, Briefcase, FolderOpen, Mail } from 'lucide-react';
+import { Terminal as TerminalIcon, User, Briefcase, FolderOpen, Mail, Home } from 'lucide-react';
 
 export const Taskbar = () => {
   const handleCommandClick = (command: string) => {
@@ -19,6 +19,13 @@ export const Taskbar = () => {
         </div>
         
         <div className="flex items-center gap-4">
+          <button 
+            onClick={() => handleCommandClick('home')}
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors"
+          >
+            <Home className="w-4 h-4" />
+            <span className="hidden sm:inline">Home</span>
+          </button>
           <button 
             onClick={() => handleCommandClick('about')}
             className="flex items-center gap-2 px-3 py-1.5 text-xs font-mono text-terminal-comment hover:text-terminal-text transition-colors"

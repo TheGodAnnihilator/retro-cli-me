@@ -170,7 +170,7 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
   return (
     <div 
       ref={terminalRef}
-      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-20 relative scan-lines"
+      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-24 relative scan-lines"
     >
       <div className="max-w-6xl mx-auto">
         {/* Terminal window */}
@@ -178,9 +178,21 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
           {/* Terminal header */}
           <div className="bg-terminal-bg border-b border-terminal-border px-2 sm:px-4 py-2 flex items-center gap-2">
             <div className="flex gap-1 sm:gap-2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-destructive"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-warning"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-success"></div>
+              <button 
+                onClick={() => executeTerminalCommand('clear')}
+                className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-destructive hover:opacity-80 transition-opacity cursor-pointer"
+                title="Clear terminal"
+              ></button>
+              <button 
+                onClick={() => executeTerminalCommand('home')}
+                className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-warning hover:opacity-80 transition-opacity cursor-pointer"
+                title="Go to home"
+              ></button>
+              <button 
+                onClick={() => executeTerminalCommand('help')}
+                className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-terminal-success hover:opacity-80 transition-opacity cursor-pointer"
+                title="Show help"
+              ></button>
             </div>
             <div className="flex-1 text-center text-xs sm:text-sm text-terminal-comment">
               archit@portfolio: ~
