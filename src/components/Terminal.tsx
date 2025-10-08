@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { TerminalOutput } from './TerminalOutput';
+import { MatrixRain } from './MatrixRain';
 import { executeCommand, getAutocomplete } from '@/lib/commands';
 import { TerminalLine } from '@/types/terminal';
 
@@ -172,7 +173,8 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
       ref={terminalRef}
       className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-24 relative scan-lines"
     >
-      <div className="max-w-6xl mx-auto">
+      {theme === 'matrix' && <MatrixRain />}
+      <div className="max-w-6xl mx-auto relative z-20">
         {/* Terminal window */}
         <div className="border border-terminal-border rounded-lg overflow-hidden shadow-2xl">
           {/* Terminal header */}
