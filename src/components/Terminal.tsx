@@ -27,6 +27,7 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
     },
   ]);
   const [theme, setTheme] = useState('green');
+  const [currentTime, setCurrentTime] = useState(new Date());
   
   const inputRef = useRef<HTMLInputElement>(null);
   const outputRef = useRef<HTMLDivElement>(null);
@@ -61,6 +62,14 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
     };
     terminalRef.current?.addEventListener('click', handleClick);
     return () => terminalRef.current?.removeEventListener('click', handleClick);
+  }, []);
+
+  useEffect(() => {
+    // Update time every second
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
 
   const executeTerminalCommand = (command: string) => {
@@ -237,6 +246,19 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
           <span className="inline-block">↑↓: history</span>
           <span className="hidden sm:inline-block">Ctrl+L: clear</span>
           <span className="hidden sm:inline-block">Ctrl+C: cancel</span>
+        </div>
+
+        {/* Date and time display */}
+        <div className="mt-2 sm:mt-4 text-xs sm:text-sm text-terminal-text text-center terminal-glow">
+          {currentTime.toLocaleString('en-US', { 
+            year: 'numeric', 
+            month: 'numeric', 
+            day: 'numeric',
+            hour: 'numeric',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+          })}
         </div>
       </div>
     </div>
