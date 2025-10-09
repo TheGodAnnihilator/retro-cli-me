@@ -171,10 +171,10 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
   return (
     <div 
       ref={terminalRef}
-      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-24 relative scan-lines"
+      className="min-h-screen bg-terminal-bg text-terminal-text p-2 sm:p-4 md:p-8 pt-20 relative scan-lines"
     >
       {theme === 'matrix' && <MatrixRain />}
-      <div className="max-w-6xl mx-auto relative z-20">
+      <div className="max-w-6xl mx-auto relative z-20 mt-8 sm:mt-12 md:mt-16">
         {/* Terminal window */}
         <div className="border border-terminal-border rounded-lg overflow-hidden shadow-2xl">
           {/* Terminal header */}
