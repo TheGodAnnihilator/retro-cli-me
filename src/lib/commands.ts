@@ -341,7 +341,7 @@ const pwdCommand = (): CommandResult => ({
 const sudoCommand = (): CommandResult => {
   // Easter egg: Redirect to Rick Roll
   setTimeout(() => {
-    window.open('https://youtu.be/dQw4w9WgXcQ?si=xavurQVtjTvtIYph', '_blank');
+    window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=xavurQVtjTvtIYph';
   }, 500);
   
   return {
