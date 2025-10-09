@@ -338,13 +338,20 @@ const pwdCommand = (): CommandResult => ({
   ],
 });
 
-const sudoCommand = (): CommandResult => ({
-  output: [
-    { type: 'error', content: '[sudo] password for archit: ' },
-    { type: 'error', content: 'Nice try! But this isn\'t a real terminal 😄' },
-    { type: 'output', content: '' },
-  ],
-});
+const sudoCommand = (): CommandResult => {
+  // Easter egg: Redirect to Rick Roll
+  setTimeout(() => {
+    window.open('https://youtu.be/dQw4w9WgXcQ?si=xavurQVtjTvtIYph', '_blank');
+  }, 500);
+  
+  return {
+    output: [
+      { type: 'error', content: '[sudo] password for archit: ' },
+      { type: 'success', content: 'Access granted! Redirecting to secure terminal...' },
+      { type: 'output', content: '' },
+    ],
+  };
+};
 
 const whoamiCommand = (): CommandResult => ({
   output: [
