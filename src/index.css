@@ -12,7 +12,7 @@
     
     --terminal-bg: 0 0% 0%;
     --terminal-text: 120 100% 50%;
-    --terminal-prompt: 120 100% 40%;
+    --terminal-prompt: 280 100% 60%;
     --terminal-error: 0 100% 50%;
     --terminal-success: 120 100% 50%;
     --terminal-warning: 45 100% 50%;
@@ -51,7 +51,7 @@
   /* Blue Terminal Theme */
   [data-theme="blue"] {
     --terminal-text: 200 100% 50%;
-    --terminal-prompt: 200 100% 40%;
+    --terminal-prompt: 330 100% 60%;
     --terminal-success: 200 100% 50%;
     --terminal-link: 200 100% 60%;
     --terminal-comment: 200 50% 35%;
@@ -64,7 +64,7 @@
   /* Amber Terminal Theme */
   [data-theme="amber"] {
     --terminal-text: 45 100% 50%;
-    --terminal-prompt: 45 100% 40%;
+    --terminal-prompt: 180 100% 50%;
     --terminal-success: 45 100% 50%;
     --terminal-link: 45 100% 60%;
     --terminal-comment: 45 50% 35%;
@@ -77,7 +77,7 @@
   /* White Terminal Theme */
   [data-theme="white"] {
     --terminal-text: 0 0% 90%;
-    --terminal-prompt: 0 0% 70%;
+    --terminal-prompt: 200 100% 70%;
     --terminal-success: 0 0% 90%;
     --terminal-link: 0 0% 100%;
     --terminal-comment: 0 0% 50%;
@@ -90,7 +90,7 @@
   /* Matrix Theme (same as green) */
   [data-theme="matrix"] {
     --terminal-text: 120 100% 50%;
-    --terminal-prompt: 120 100% 40%;
+    --terminal-prompt: 280 100% 60%;
     --terminal-success: 120 100% 50%;
     --terminal-link: 120 100% 60%;
     --terminal-comment: 120 50% 35%;
