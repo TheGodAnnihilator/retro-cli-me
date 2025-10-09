@@ -249,7 +249,7 @@ export const Terminal = ({ onCommandExecute }: TerminalProps = {}) => {
         </div>
 
         {/* Date and time display */}
-        <div className="mt-2 sm:mt-4 text-xs sm:text-sm text-terminal-text text-center terminal-glow">
+        <div className="mt-2 sm:mt-4 text-xs sm:text-sm text-terminal-prompt text-center terminal-glow">
           {currentTime.toLocaleString('en-US', { 
             year: 'numeric', 
             month: 'numeric', 
