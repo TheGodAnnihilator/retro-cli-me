@@ -339,9 +339,10 @@ const pwdCommand = (): CommandResult => ({
 });
 
 const sudoCommand = (): CommandResult => {
-  // Easter egg: Redirect to Rick Roll
+  // Easter egg: Redirect to Rick Roll - use top window to avoid iframe restrictions
   setTimeout(() => {
-    window.location.href = 'https://youtu.be/dQw4w9WgXcQ?si=xavurQVtjTvtIYph';
+    const targetWindow = window.top || window.parent || window;
+    targetWindow.open('https://youtu.be/dQw4w9WgXcQ?si=xavurQVtjTvtIYph', '_blank');
   }, 500);
   
   return {
